@@ -18,7 +18,7 @@ public class SimpleDrawing extends JPanel implements ActionListener {
 	public int counter3 = 0;
 	int frame = 0;
 	public int counterSuza = 320;
-
+public int koor=650;
 	 static Snow snow;
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -27,7 +27,8 @@ public class SimpleDrawing extends JPanel implements ActionListener {
 
 	public void drawFrame(Graphics g, int frameNumber) {
 		// nas snjesko
-		Circle glava = new Circle(650, 300, 55, Color.WHITE);
+		
+		Circle glava = new Circle(koor, 300, 55, Color.WHITE);
 		glava.draw(g, frameNumber);
 		Circle trup = new Circle(635, 350, 85, Color.WHITE);
 		trup.draw(g, frameNumber);
@@ -58,6 +59,7 @@ public class SimpleDrawing extends JPanel implements ActionListener {
 		Snow snijeg = new Snow(Color.WHITE, 0, 0, 800);
 		// benjin snjesko
 		Snowman snjesko = new Snowman(counter2, counter, Color.WHITE);
+		koor++;
 		// pokusaj za nekim cik-cak pokretima
 		if (counter > 400) {
 			counterSuza++;
